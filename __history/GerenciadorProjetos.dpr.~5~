@@ -1,0 +1,17 @@
+program GerenciadorProjetos;
+
+uses
+  Vcl.Forms,
+  Un_TelaPrincipal in 'src\View\Un_TelaPrincipal.pas' {FrmTelaPrincipal},
+  DMPrincipal in 'src\Model\DMPrincipal.pas' {dsColaboradores: TDataModule},
+  uFrameColaboradores in 'src\View\uFrameColaboradores.pas' {FrameColaboradores: TFrame};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TFrmTelaPrincipal, FrmTelaPrincipal);
+  Application.CreateForm(TdsColaboradores, dsColaboradores);
+  Application.Run;
+end.

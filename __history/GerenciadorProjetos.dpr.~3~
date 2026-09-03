@@ -1,0 +1,16 @@
+program GerenciadorProjetos;
+
+uses
+  Vcl.Forms,
+  Un_TelaPrincipal in 'src\View\Un_TelaPrincipal.pas' {FrmTelaPrincipal},
+  DMPrincipal in 'src\Model\DMPrincipal.pas' {DataModule2: TDataModule};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TFrmTelaPrincipal, FrmTelaPrincipal);
+  Application.CreateForm(TDataModule2, DataModule2);
+  Application.Run;
+end.

@@ -1,0 +1,71 @@
+object FrmTelaPrincipal: TFrmTelaPrincipal
+  Left = 0
+  Top = 0
+  Caption = 'TFrmTelaPrincipal'
+  ClientHeight = 698
+  ClientWidth = 1197
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  Position = poDesigned
+  OnCreate = FormCreate
+  TextHeight = 15
+  object jpnlPrincipal: TJvPanel
+    Left = 257
+    Top = 0
+    Width = 940
+    Height = 698
+    Margins.Left = 0
+    Margins.Top = 0
+    Margins.Right = 0
+    Margins.Bottom = 0
+    Align = alClient
+    BevelOuter = bvNone
+    TabOrder = 0
+    object jpnl_MenuTop: TJvPanel
+      Left = 0
+      Top = 0
+      Width = 940
+      Height = 120
+      Margins.Left = 0
+      Margins.Top = 0
+      Margins.Right = 0
+      Margins.Bottom = 0
+      Align = alTop
+      BevelEdges = []
+      BevelOuter = bvNone
+      Color = clSilver
+      ParentBackground = False
+      TabOrder = 0
+    end
+    object jpnl_Conteudo: TJvPanel
+      Left = 0
+      Top = 120
+      Width = 940
+      Height = 578
+      Align = alClient
+      TabOrder = 1
+    end
+  end
+  object jpnlMenuLateral: TJvPanel
+    Left = 0
+    Top = 0
+    Width = 257
+    Height = 698
+    Margins.Left = 0
+    Margins.Top = 0
+    Margins.Right = 0
+    Margins.Bottom = 0
+    Align = alLeft
+    BiDiMode = bdLeftToRight
+    ParentBiDiMode = False
+    BevelEdges = []
+    BevelOuter = bvNone
+    Color = clGrayText
+    ParentBackground = False
+    TabOrder = 1
+  end
+end

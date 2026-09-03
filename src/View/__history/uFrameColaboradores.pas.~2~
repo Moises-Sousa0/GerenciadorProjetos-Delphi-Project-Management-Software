@@ -1,0 +1,26 @@
+unit uFrameColaboradores;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes,
+  Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.ExtCtrls,
+  JvExExtCtrls, JvExtComponent, JvPanel, Vcl.Grids, Vcl.DBGrids, JvExDBGrids,
+  JvDBGrid;
+
+type
+  TFrameColaboradores = class(TFrame)
+    JvDBGrid1: TJvDBGrid;
+    JpnlConteudoColab: TJvPanel;
+    jpnlMenuColab: TJvPanel;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+implementation
+
+{$R *.dfm}
+
+end.

@@ -1,0 +1,33 @@
+unit Un_TelaPrincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, JvExExtCtrls,
+  JvExtComponent, JvPanel, Data.DB, Vcl.Grids, Vcl.DBGrids;
+
+type
+  TFrmTelaPrincipal = class(TForm)
+    Jpnl_Principal: TJvPanel;
+    jpn_MenuTop: TJvPanel;
+    jpn_MenuLateral: TJvPanel;
+    jpn_Conteudo: TJvPanel;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FrmTelaPrincipal: TFrmTelaPrincipal;
+
+implementation
+
+{$R *.dfm}
+
+uses DMPrincipal;
+
+
+
+end.

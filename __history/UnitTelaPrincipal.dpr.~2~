@@ -1,0 +1,14 @@
+program UnitTelaPrincipal;
+
+uses
+  Vcl.Forms,
+  UnTelaPrincipal in 'UnTelaPrincipal.pas' {Form1};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TFormPrincipal, FormPrincipal);
+  Application.Run;
+end.

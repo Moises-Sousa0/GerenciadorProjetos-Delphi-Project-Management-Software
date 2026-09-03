@@ -1,0 +1,156 @@
+-- CRIAÇÃO DE TABELAS
+
+CREATE TABLE Colaboradores(
+    ID INT IDENTITY(1,1) PRIMARY KEY,
+    nome VARCHAR(30) NOT NULL,
+    senha VARCHAR(30) NOT NULL,
+    status VARCHAR(20) NOT NULL DEFAULT 'ATIVO'
+);
+GO
+
+CREATE TABLE Projetos(
+    ID INT IDENTITY(1,1) PRIMARY KEY,
+    ID_criador INT NOT NULL,
+    nome VARCHAR(50) NOT NULL,
+    status VARCHAR(20) NOT NULL DEFAULT 'EM_PROCESSO',
+    data_criacao DATETIMEOFFSET NOT NULL DEFAULT SYSDATETIMEOFFSET(),
+    data_conclusao DATETIMEOFFSET NULL,
+
+    FOREIGN KEY (ID_criador) REFERENCES Colaboradores(ID)
+);
+GO
+
+CREATE TABLE Projeto_colaboradores(
+    ID_projeto INT NOT NULL,
+    ID_colaborador INT NOT NULL,
+
+    FOREIGN KEY (ID_projeto) REFERENCES Projetos(ID) ON DELETE CASCADE,
+    FOREIGN KEY (ID_colaborador) REFERENCES Colaboradores(ID),
+
+    PRIMARY KEY (ID_projeto, ID_colaborador)
+);
+GO
+
+CREATE TABLE Tarefas(
+    ID INT IDENTITY(1,1) PRIMARY KEY,
+    ID_projeto INT NOT NULL,
+    ID_colaborador INT NOT NULL,
+    nome VARCHAR(50) NOT NULL,
+    status VARCHAR(20) NOT NULL DEFAULT 'PENDENTE',
+    data_conclusao DATETIMEOFFSET NULL,
+
+    FOREIGN KEY (ID_projeto, ID_colaborador) REFERENCES Projeto_colaboradores(ID_projeto, ID_colaborador)
+);
+GO
+
+-- PROCEDURES
+
+CREATE PROCEDURE CriarProjeto
+    @ID_criador INT,
+    @nome VARCHAR(50)
+AS
+BEGIN
+    BEGIN TRANSACTION;
+    BEGIN TRY
+        DECLARE @ID_projeto INT;
+
+        INSERT INTO Projetos(ID_criador, nome)
+        VALUES (@ID_criador, @nome);
+
+        SET @ID_projeto = SCOPE_IDENTITY();
+
+        INSERT INTO Projeto_colaboradores (ID_projeto, ID_colaborador)
+        VALUES (@ID_projeto, @ID_criador);
+
+        COMMIT TRANSACTION;
+    END TRY
+    BEGIN CATCH
+        ROLLBACK TRANSACTION;
+        DECLARE @ErrorMessage NVARCHAR(4000) = ERROR_MESSAGE();
+        RAISERROR (@ErrorMessage, 16, 1);
+    END CATCH;
+END;
+GO
+
+CREATE PROCEDURE ConcluirProjeto
+    @ID_projeto INT
+AS
+BEGIN
+    IF EXISTS (SELECT 1 FROM Tarefas WHERE ID_projeto = @ID_projeto AND status <> 'CONCLUIDA')
+    BEGIN
+        RAISERROR ('Projeto não pode ser concluído, pois existem tarefas pendentes.', 16, 1);
+    END
+    ELSE
+    BEGIN
+        UPDATE Projetos
+        SET status = 'CONCLUIDO',
+            data_conclusao = SYSDATETIMEOFFSET()
+        WHERE ID = @ID_projeto;
+    END
+END;
+GO
+
+CREATE PROCEDURE ConcluirTarefa
+    @ID_tarefa INT
+AS
+BEGIN
+    UPDATE Tarefas
+    SET status = 'CONCLUIDA',
+        data_conclusao = SYSDATETIMEOFFSET()
+    WHERE ID = @ID_tarefa;
+END;
+GO
+
+-- ÍNDICES
+
+CREATE INDEX IX_Tarefas_ID_Projeto
+ON Tarefas(ID_projeto);
+GO
+
+CREATE INDEX IX_Tarefas_ID_Colaborador
+ON Tarefas(ID_colaborador);
+GO
+
+CREATE INDEX IX_Projeto_ID_Status
+ON Projetos(status);
+GO
+
+-- VIEWS
+
+CREATE VIEW vw_ResumoProjetos
+AS
+SELECT
+    p.ID,
+    p.nome,
+    p.status,
+    p.data_criacao,
+    p.data_conclusao,
+
+    COUNT(t.ID) AS total_tarefas,
+
+    SUM(
+        CASE
+            WHEN t.status = 'CONCLUIDA' THEN 1
+            ELSE 0
+        END
+    ) AS tarefas_concluidas,
+
+    SUM(
+        CASE
+            WHEN t.status = 'PENDENTE' THEN 1
+            ELSE 0
+        END
+    ) AS tarefas_pendentes
+
+FROM Projetos p
+
+LEFT JOIN Tarefas t
+    ON t.ID_projeto = p.ID
+
+GROUP BY
+    p.ID,
+    p.nome,
+    p.status,
+    p.data_criacao,
+    p.data_conclusao;
+GO
