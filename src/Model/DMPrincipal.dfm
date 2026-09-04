@@ -18,7 +18,7 @@ object DM: TDM
     CursorType = ctStatic
     Parameters = <>
     SQL.Strings = (
-      'SELECT ID, nome, status FROM Colaboradores')
+      'SELECT ID, nome, status, senha FROM Colaboradores')
     Left = 440
     Top = 232
   end

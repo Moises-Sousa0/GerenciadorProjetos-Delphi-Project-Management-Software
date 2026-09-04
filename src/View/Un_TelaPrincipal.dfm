@@ -29,7 +29,7 @@ object FrmTelaPrincipal: TFrmTelaPrincipal
       Left = 0
       Top = 0
       Width = 940
-      Height = 120
+      Height = 89
       Margins.Left = 0
       Margins.Top = 0
       Margins.Right = 0
@@ -43,10 +43,12 @@ object FrmTelaPrincipal: TFrmTelaPrincipal
     end
     object jpnl_Conteudo: TJvPanel
       Left = 0
-      Top = 120
+      Top = 89
       Width = 940
-      Height = 578
+      Height = 609
       Align = alClient
+      Color = 2434341
+      ParentBackground = False
       TabOrder = 1
     end
   end
@@ -59,12 +61,13 @@ object FrmTelaPrincipal: TFrmTelaPrincipal
     Margins.Top = 0
     Margins.Right = 0
     Margins.Bottom = 0
+    FlatBorderColor = clCaptionText
     Align = alLeft
     BiDiMode = bdLeftToRight
     ParentBiDiMode = False
     BevelEdges = []
     BevelOuter = bvNone
-    Color = clGrayText
+    Color = 1644825
     ParentBackground = False
     TabOrder = 1
   end
