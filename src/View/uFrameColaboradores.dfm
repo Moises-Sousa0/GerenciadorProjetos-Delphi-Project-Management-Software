@@ -20,9 +20,9 @@ object FrameColaboradores: TFrameColaboradores
       Width = 638
       Height = 415
       Align = alClient
-      Color = clBtnFace
+      Color = clWhite
       DataSource = DM.DsColaboradores
-      GradientEndColor = clBtnFace
+      GradientEndColor = clWhite
       TabOrder = 0
       TitleFont.Charset = DEFAULT_CHARSET
       TitleFont.Color = clWindowText
@@ -40,18 +40,36 @@ object FrameColaboradores: TFrameColaboradores
         item
           Expanded = False
           FieldName = 'ID'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -13
+          Font.Name = 'Segoe UI'
+          Font.Style = []
+          Width = 90
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'nome'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -13
+          Font.Name = 'Segoe UI'
+          Font.Style = []
           Title.Caption = 'Nome'
+          Width = 90
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'status'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -13
+          Font.Name = 'Segoe UI'
+          Font.Style = []
           Title.Caption = 'Status'
+          Width = 90
           Visible = True
         end>
     end
@@ -68,6 +86,12 @@ object FrameColaboradores: TFrameColaboradores
         Width = 75
         Height = 25
         Caption = 'Adicionar'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
         TabOrder = 0
         OnClick = btnAdicionarClick
       end

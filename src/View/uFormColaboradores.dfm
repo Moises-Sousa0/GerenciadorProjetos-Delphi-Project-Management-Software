@@ -18,8 +18,6 @@ object FormColaborador: TFormColaborador
     Height = 441
     Align = alClient
     TabOrder = 0
-    ExplicitLeft = -40
-    ExplicitTop = -8
     object lblNome: TJvLabel
       Left = 32
       Top = 40
@@ -72,7 +70,7 @@ object FormColaborador: TFormColaborador
       Left = 32
       Top = 63
       Width = 233
-      Height = 42
+      Height = 23
       TabOrder = 0
       Text = ''
     end
@@ -80,7 +78,7 @@ object FormColaborador: TFormColaborador
       Left = 32
       Top = 167
       Width = 233
-      Height = 42
+      Height = 23
       TabOrder = 1
       Text = ''
     end
@@ -92,8 +90,8 @@ object FormColaborador: TFormColaborador
       TabOrder = 2
       Text = ''
       Items.Strings = (
-        'Ativo'
-        'Inativo')
+        'ATIVO'
+        'INATIVO')
     end
     object btnSalvar: TJvBitBtn
       Left = 32

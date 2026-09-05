@@ -37,7 +37,7 @@ object FrmTelaPrincipal: TFrmTelaPrincipal
       Align = alTop
       BevelEdges = []
       BevelOuter = bvNone
-      Color = clSilver
+      Color = clWhite
       ParentBackground = False
       TabOrder = 0
     end
@@ -47,7 +47,7 @@ object FrmTelaPrincipal: TFrmTelaPrincipal
       Width = 940
       Height = 609
       Align = alClient
-      Color = 2434341
+      Color = clSilver
       ParentBackground = False
       TabOrder = 1
     end
@@ -67,8 +67,54 @@ object FrmTelaPrincipal: TFrmTelaPrincipal
     ParentBiDiMode = False
     BevelEdges = []
     BevelOuter = bvNone
-    Color = 1644825
+    Color = 3285530
     ParentBackground = False
     TabOrder = 1
+    object jpnlInfo: TJvPanel
+      Left = 0
+      Top = 0
+      Width = 257
+      Height = 86
+      Margins.Left = 0
+      Margins.Top = 0
+      Margins.Right = 0
+      Margins.Bottom = 0
+      FlatBorderColor = clCaptionText
+      Align = alTop
+      BiDiMode = bdLeftToRight
+      ParentBiDiMode = False
+      BevelEdges = []
+      BevelOuter = bvNone
+      Color = 3416602
+      ParentBackground = False
+      TabOrder = 0
+      object lblInfo: TJvLabel
+        AlignWithMargins = True
+        Left = 3
+        Top = 35
+        Width = 251
+        Height = 48
+        Margins.Top = 35
+        Align = alClient
+        Alignment = taCenter
+        Caption = 'Pmanager'
+        Color = clWhite
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clMenu
+        Font.Height = -24
+        Font.Name = 'JetBrains Mono NL'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+        Transparent = True
+        HotTrackFont.Charset = ANSI_CHARSET
+        HotTrackFont.Color = clWindowText
+        HotTrackFont.Height = -24
+        HotTrackFont.Name = 'JetBrains Mono NL'
+        HotTrackFont.Style = []
+        ExplicitWidth = 114
+        ExplicitHeight = 31
+      end
+    end
   end
 end

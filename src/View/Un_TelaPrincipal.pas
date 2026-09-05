@@ -5,7 +5,8 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, JvExExtCtrls,
-  JvExtComponent, JvPanel, Data.DB, Vcl.Grids, Vcl.DBGrids, uFrameColaboradores;
+  JvExtComponent, JvPanel, Data.DB, Vcl.Grids, Vcl.DBGrids, uFrameColaboradores,
+  JvExControls, JvLabel;
 
 type
   TFrmTelaPrincipal = class(TForm)
@@ -13,6 +14,8 @@ type
     jpnl_MenuTop: TJvPanel;
     jpnlMenuLateral: TJvPanel;
     jpnl_Conteudo: TJvPanel;
+    jpnlInfo: TJvPanel;
+    lblInfo: TJvLabel;
     procedure FormCreate(Sender: TObject);
   private
     { Private declarations }

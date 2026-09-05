@@ -6,8 +6,15 @@ uses
   DMPrincipal in 'src\Model\DMPrincipal.pas' {DM: TDataModule},
   uFrameColaboradores in 'src\View\uFrameColaboradores.pas' {FrameColaboradores: TFrame},
   uColaboradorDAO in 'src\Model\DAO\uColaboradorDAO.pas' {Form1},
-  uColaboradorControl in 'src\Controller\uColaboradorControl.pas',
-  uFormColaboradores in 'src\View\uFormColaboradores.pas' {FormColaborador};
+  {$R}
+  {$R}
+  {$R}
+  {$R}
+  {$R}
+  {$R}
+  uColaboradorControl in 'src\Controller\uColaboradorControl.pas' {$R *.res},
+  uFormColaboradores in 'src\View\uFormColaboradores.pas' {FormColaborador},
+  uProjetoDAO in 'src\Model\DAO\uProjetoDAO.pas';
 
 {$R *.res}
 
