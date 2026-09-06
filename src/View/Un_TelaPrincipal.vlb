@@ -1,5 +1,5 @@
 ﻿[]
-Coordinates=260,1,91,36
+Coordinates=10,10,93,58
 
 [jpnlMenuLateral]
 Coordinates=217,10,110,58
@@ -10,7 +10,4 @@ Coordinates=10,78,95,58
 
 [jpnl_Conteudo]
 Coordinates=113,10,94,58
-
-[jpnl_MenuTop]
-Coordinates=10,10,93,58
 

@@ -3,23 +3,34 @@ object FrameColaboradores: TFrameColaboradores
   Top = 0
   Width = 640
   Height = 480
-  Color = clBlue
+  Color = clWhite
   ParentBackground = False
   ParentColor = False
   TabOrder = 0
   object jpnlConteudoColab: TJvPanel
-    Left = 0
-    Top = 0
-    Width = 640
-    Height = 480
+    AlignWithMargins = True
+    Left = 3
+    Top = 3
+    Width = 634
+    Height = 474
+    FlatBorder = True
     Align = alClient
+    BorderWidth = 1
+    BorderStyle = bsSingle
     TabOrder = 0
+    ExplicitLeft = 0
+    ExplicitTop = 0
+    ExplicitWidth = 640
+    ExplicitHeight = 480
     object JvDBGrid1: TJvDBGrid
-      Left = 1
-      Top = 1
-      Width = 638
-      Height = 415
+      AlignWithMargins = True
+      Left = 7
+      Top = 74
+      Width = 618
+      Height = 391
+      Margins.Left = 5
       Align = alClient
+      BorderStyle = bsNone
       Color = clWhite
       DataSource = DM.DsColaboradores
       GradientEndColor = clWhite
@@ -74,15 +85,20 @@ object FrameColaboradores: TFrameColaboradores
         end>
     end
     object jpnlMenuColab: TJvPanel
-      Left = 1
-      Top = 416
-      Width = 638
+      AlignWithMargins = True
+      Left = 7
+      Top = 5
+      Width = 618
       Height = 63
-      Align = alBottom
+      Margins.Left = 5
+      FlatBorder = True
+      Align = alTop
+      BorderWidth = 1
       TabOrder = 1
+      ExplicitWidth = 624
       object btnAdicionar: TJvBitBtn
-        Left = 248
-        Top = 22
+        Left = 16
+        Top = 20
         Width = 75
         Height = 25
         Caption = 'Adicionar'
@@ -96,8 +112,8 @@ object FrameColaboradores: TFrameColaboradores
         OnClick = btnAdicionarClick
       end
       object btnEditar: TJvBitBtn
-        Left = 344
-        Top = 22
+        Left = 136
+        Top = 20
         Width = 75
         Height = 25
         Caption = 'Editar'
@@ -105,8 +121,8 @@ object FrameColaboradores: TFrameColaboradores
         OnClick = btnEditarClick
       end
       object btnExcluir: TJvBitBtn
-        Left = 440
-        Top = 22
+        Left = 256
+        Top = 20
         Width = 75
         Height = 25
         Caption = 'Excluir'

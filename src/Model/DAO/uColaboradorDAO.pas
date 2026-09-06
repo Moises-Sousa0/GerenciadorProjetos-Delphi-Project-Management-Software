@@ -22,6 +22,9 @@ type
 
 implementation
 
+uses DMPrincipal, uColaboradorControl, uFormColaboradores, uFrameColaboradores,
+  uFrameProjeto, Un_TelaPrincipal, uProjetoControl, uProjetoDAO;
+
 constructor TColaboradorDAO.Create(AConexao: TADOConnection);
 begin
   inherited Create;

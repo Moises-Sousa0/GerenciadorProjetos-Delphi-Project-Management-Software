@@ -3,13 +3,16 @@ unit DMPrincipal;
 interface
 
 uses
-  System.SysUtils, System.Classes, Data.DB, Data.Win.ADODB, System.IniFiles;
+  System.SysUtils, System.Classes, Data.DB, Data.Win.ADODB, System.IniFiles,
+  JvDataSource, JvADOQuery;
 
 type
   TDM = class(TDataModule)
     ADOConnection1: TADOConnection;
     QryColaboradores: TADOQuery;
     DsColaboradores: TDataSource;
+    DsProjetos: TDataSource;
+    QryProjetos: TADOQuery;
     procedure DataModuleCreate(Sender: TObject);
   private
     { Private declarations }

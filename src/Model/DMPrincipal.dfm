@@ -3,6 +3,7 @@ object DM: TDM
   Height = 480
   Width = 640
   object ADOConnection1: TADOConnection
+    Connected = True
     ConnectionString = 
       'Provider=SQLOLEDB.1;Password=peixegamer;Persist Security Info=Tr' +
       'ue;User ID=sa;Initial Catalog=GerenciadorProjeto;Data Source=LOC' +
@@ -25,5 +26,19 @@ object DM: TDM
     DataSet = QryColaboradores
     Left = 160
     Top = 232
+  end
+  object DsProjetos: TDataSource
+    DataSet = QryProjetos
+    Left = 160
+    Top = 312
+  end
+  object QryProjetos: TADOQuery
+    Connection = ADOConnection1
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      'SELECT * FROM Projetos')
+    Left = 440
+    Top = 328
   end
 end

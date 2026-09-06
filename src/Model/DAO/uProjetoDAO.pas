@@ -18,6 +18,7 @@ type
     procedure Concluir(const ID: Integer);
   end;
 
+  //
 implementation
 
 constructor TProjetoDAO.Create(AConexao: TADOConnection);

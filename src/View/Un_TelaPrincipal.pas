@@ -6,20 +6,22 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, JvExExtCtrls,
   JvExtComponent, JvPanel, Data.DB, Vcl.Grids, Vcl.DBGrids, uFrameColaboradores,
-  JvExControls, JvLabel;
+  JvExControls, JvLabel, uFrameProjeto;
 
 type
   TFrmTelaPrincipal = class(TForm)
     jpnlPrincipal: TJvPanel;
-    jpnl_MenuTop: TJvPanel;
     jpnlMenuLateral: TJvPanel;
     jpnl_Conteudo: TJvPanel;
     jpnlInfo: TJvPanel;
     lblInfo: TJvLabel;
+    jpnlTopo: TJvPanel;
+    JvPanel1: TJvPanel;
     procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
-    FrameColab: TFrameColaboradores;
+    FFrameAtual: TFrame;
+    procedure AbrirModulo(const NomeModulo: string);
   public
     { Public declarations }
   end;
@@ -31,15 +33,28 @@ implementation
 
 {$R *.dfm}
 
-uses DMPrincipal;
+uses DMPrincipal, uProjetoControl, uProjetoDAO, uColaboradorControl,
+  uColaboradorDAO, uFormColaboradores;
 
 
+
+procedure TFrmTelaPrincipal.AbrirModulo(const NomeModulo: string);
+begin
+  if Assigned(FFrameAtual) then
+    FFrameAtual.Free;
+
+  if NomeModulo = 'Colaboradores' then
+    FFrameAtual := TFrameColaboradores.Create(Self)
+  else if NomeModulo = 'Projetos' then
+    FFrameAtual := TFrameProjeto.Create(Self);
+
+  FFrameAtual.Parent := jpnl_Conteudo;
+  FFrameAtual.Align := alClient;
+end;
 
 procedure TFrmTelaPrincipal.FormCreate(Sender: TObject);
 begin
-  FrameColab := TFrameColaboradores.Create(Self);
-  FrameColab.Parent := jpnl_Conteudo;
-  FrameColab.Align := alClient;
+  AbrirModulo('Projetos');
 end;
 
 end.

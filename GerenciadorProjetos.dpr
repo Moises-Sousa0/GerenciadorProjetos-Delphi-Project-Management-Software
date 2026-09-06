@@ -5,16 +5,12 @@ uses
   Un_TelaPrincipal in 'src\View\Un_TelaPrincipal.pas' {FrmTelaPrincipal},
   DMPrincipal in 'src\Model\DMPrincipal.pas' {DM: TDataModule},
   uFrameColaboradores in 'src\View\uFrameColaboradores.pas' {FrameColaboradores: TFrame},
-  uColaboradorDAO in 'src\Model\DAO\uColaboradorDAO.pas' {Form1},
-  {$R}
-  {$R}
-  {$R}
-  {$R}
-  {$R}
-  {$R}
-  uColaboradorControl in 'src\Controller\uColaboradorControl.pas' {$R *.res},
+  uColaboradorDAO in 'src\Model\DAO\uColaboradorDAO.pas',
   uFormColaboradores in 'src\View\uFormColaboradores.pas' {FormColaborador},
-  uProjetoDAO in 'src\Model\DAO\uProjetoDAO.pas';
+  uFrameProjeto in 'src\View\uFrameProjeto.pas' {FrameProjeto: TFrame},
+  uProjetoControl in 'src\Controller\uProjetoControl.pas',
+  uProjetoDAO in 'src\Model\DAO\uProjetoDAO.pas',
+  uColaboradorControl in 'src\Controller\uColaboradorControl.pas';
 
 {$R *.res}
 

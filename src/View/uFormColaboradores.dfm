@@ -3,8 +3,8 @@ object FormColaborador: TFormColaborador
   Top = 0
   Caption = 'FormColaborador'
   ClientHeight = 441
-  ClientWidth = 624
-  Color = clBtnFace
+  ClientWidth = 576
+  Color = 13347482
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -12
@@ -14,10 +14,19 @@ object FormColaborador: TFormColaborador
   object jpnlCadastroEdicao: TJvPanel
     Left = 0
     Top = 0
-    Width = 624
+    Width = 576
     Height = 441
+    Margins.Left = 30
     Align = alClient
+    Alignment = taLeftJustify
+    BevelOuter = bvNone
+    Color = 14666685
+    ParentBackground = False
     TabOrder = 0
+    ExplicitLeft = 104
+    ExplicitTop = -16
+    ExplicitWidth = 369
+    ExplicitHeight = 576
     object lblNome: TJvLabel
       Left = 32
       Top = 40
@@ -87,6 +96,7 @@ object FormColaborador: TFormColaborador
       Top = 275
       Width = 233
       Height = 23
+      Style = csDropDownList
       TabOrder = 2
       Text = ''
       Items.Strings = (

@@ -15,9 +15,9 @@ object FrmTelaPrincipal: TFrmTelaPrincipal
   TextHeight = 15
   object jpnlPrincipal: TJvPanel
     Left = 257
-    Top = 0
+    Top = 57
     Width = 940
-    Height = 698
+    Height = 623
     Margins.Left = 0
     Margins.Top = 0
     Margins.Right = 0
@@ -25,55 +25,47 @@ object FrmTelaPrincipal: TFrmTelaPrincipal
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 0
-    object jpnl_MenuTop: TJvPanel
+    ExplicitTop = 0
+    ExplicitHeight = 698
+    object jpnl_Conteudo: TJvPanel
       Left = 0
       Top = 0
       Width = 940
-      Height = 89
-      Margins.Left = 0
-      Margins.Top = 0
-      Margins.Right = 0
-      Margins.Bottom = 0
-      Align = alTop
-      BevelEdges = []
-      BevelOuter = bvNone
-      Color = clWhite
-      ParentBackground = False
-      TabOrder = 0
-    end
-    object jpnl_Conteudo: TJvPanel
-      Left = 0
-      Top = 89
-      Width = 940
-      Height = 609
+      Height = 623
       Align = alClient
       Color = clSilver
       ParentBackground = False
-      TabOrder = 1
+      TabOrder = 0
+      ExplicitTop = 89
+      ExplicitHeight = 609
     end
   end
   object jpnlMenuLateral: TJvPanel
     Left = 0
-    Top = 0
+    Top = 57
     Width = 257
-    Height = 698
+    Height = 623
     Margins.Left = 0
     Margins.Top = 0
     Margins.Right = 0
     Margins.Bottom = 0
-    FlatBorderColor = clCaptionText
+    FlatBorder = True
+    FlatBorderColor = 8683648
     Align = alLeft
     BiDiMode = bdLeftToRight
     ParentBiDiMode = False
     BevelEdges = []
     BevelOuter = bvNone
-    Color = 3285530
+    BorderWidth = 1
+    Color = 13347482
     ParentBackground = False
     TabOrder = 1
+    ExplicitTop = 0
+    ExplicitHeight = 698
     object jpnlInfo: TJvPanel
-      Left = 0
-      Top = 0
-      Width = 257
+      Left = 1
+      Top = 1
+      Width = 255
       Height = 86
       Margins.Left = 0
       Margins.Top = 0
@@ -85,36 +77,63 @@ object FrmTelaPrincipal: TFrmTelaPrincipal
       ParentBiDiMode = False
       BevelEdges = []
       BevelOuter = bvNone
-      Color = 3416602
+      Color = 13347482
       ParentBackground = False
       TabOrder = 0
-      object lblInfo: TJvLabel
-        AlignWithMargins = True
-        Left = 3
-        Top = 35
-        Width = 251
-        Height = 48
-        Margins.Top = 35
-        Align = alClient
-        Alignment = taCenter
-        Caption = 'Pmanager'
-        Color = clWhite
-        Font.Charset = ANSI_CHARSET
-        Font.Color = clMenu
-        Font.Height = -24
-        Font.Name = 'JetBrains Mono NL'
-        Font.Style = [fsBold]
-        ParentColor = False
-        ParentFont = False
-        Transparent = True
-        HotTrackFont.Charset = ANSI_CHARSET
-        HotTrackFont.Color = clWindowText
-        HotTrackFont.Height = -24
-        HotTrackFont.Name = 'JetBrains Mono NL'
-        HotTrackFont.Style = []
-        ExplicitWidth = 114
-        ExplicitHeight = 31
-      end
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 257
     end
+  end
+  object jpnlTopo: TJvPanel
+    Left = 0
+    Top = 0
+    Width = 1197
+    Height = 57
+    FlatBorder = True
+    FlatBorderColor = 8683648
+    Align = alTop
+    BevelOuter = bvNone
+    BorderWidth = 1
+    Color = 10841940
+    ParentBackground = False
+    TabOrder = 2
+    object lblInfo: TJvLabel
+      AlignWithMargins = True
+      Left = 13
+      Top = 13
+      Width = 324
+      Height = 40
+      Margins.Left = 12
+      Margins.Top = 12
+      Align = alLeft
+      Caption = 'Gerenciador de Projetos'
+      Color = clWhite
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clMenu
+      Font.Height = -24
+      Font.Name = 'JetBrains Mono NL'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+      Transparent = True
+      HotTrackFont.Charset = ANSI_CHARSET
+      HotTrackFont.Color = clWindowText
+      HotTrackFont.Height = -24
+      HotTrackFont.Name = 'JetBrains Mono NL'
+      HotTrackFont.Style = []
+      ExplicitLeft = 4
+      ExplicitHeight = 31
+    end
+  end
+  object JvPanel1: TJvPanel
+    Left = 0
+    Top = 680
+    Width = 1197
+    Height = 18
+    Align = alBottom
+    Color = 14666685
+    ParentBackground = False
+    TabOrder = 3
   end
 end

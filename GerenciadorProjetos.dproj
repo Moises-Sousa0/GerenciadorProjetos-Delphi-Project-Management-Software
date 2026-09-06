@@ -139,18 +139,17 @@
             <FormType>dfm</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
-        <DCCReference Include="src\Model\DAO\uColaboradorDAO.pas">
-            <Form>Form1</Form>
-            <FormType>dfm</FormType>
-        </DCCReference>
-        <DCCReference Include="src\Controller\uColaboradorControl.pas">
-            <Form>$R *.res</Form>
-        </DCCReference>
+        <DCCReference Include="src\Model\DAO\uColaboradorDAO.pas"/>
         <DCCReference Include="src\View\uFormColaboradores.pas">
             <Form>FormColaborador</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="src\View\uFrameProjeto.pas">
+            <Form>FrameProjeto</Form>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="src\Controller\uProjetoControl.pas"/>
         <DCCReference Include="src\Model\DAO\uProjetoDAO.pas"/>
+        <DCCReference Include="src\Controller\uColaboradorControl.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
