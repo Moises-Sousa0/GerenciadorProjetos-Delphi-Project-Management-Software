@@ -6,7 +6,8 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, JvExExtCtrls,
   JvExtComponent, JvPanel, Data.DB, Vcl.Grids, Vcl.DBGrids, uFrameColaboradores,
-  JvExControls, JvLabel, uFrameProjeto;
+  JvExControls, JvLabel, uFrameProjeto, Vcl.StdCtrls, Vcl.Buttons, JvExButtons,
+  JvBitBtn, JvShape;
 
 type
   TFrmTelaPrincipal = class(TForm)
@@ -17,7 +18,12 @@ type
     lblInfo: TJvLabel;
     jpnlTopo: TJvPanel;
     JvPanel1: TJvPanel;
-    procedure FormCreate(Sender: TObject);
+    JvBitBtn1: TJvBitBtn;
+    JvBitBtn2: TJvBitBtn;
+
+    procedure JvBitBtn1Click(Sender: TObject);
+    procedure JvBitBtn2Click(Sender: TObject);
+    procedure JvShape1Click(Sender: TObject);
   private
     { Private declarations }
     FFrameAtual: TFrame;
@@ -52,9 +58,19 @@ begin
   FFrameAtual.Align := alClient;
 end;
 
-procedure TFrmTelaPrincipal.FormCreate(Sender: TObject);
+procedure TFrmTelaPrincipal.JvBitBtn1Click(Sender: TObject);
 begin
   AbrirModulo('Projetos');
+end;
+
+procedure TFrmTelaPrincipal.JvBitBtn2Click(Sender: TObject);
+begin
+  AbrirModulo('Colaboradores');
+end;
+
+procedure TFrmTelaPrincipal.JvShape1Click(Sender: TObject);
+begin
+  AbrirModulo('Colaboradores');
 end;
 
 end.

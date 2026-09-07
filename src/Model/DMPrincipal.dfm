@@ -3,7 +3,6 @@ object DM: TDM
   Height = 480
   Width = 640
   object ADOConnection1: TADOConnection
-    Connected = True
     ConnectionString = 
       'Provider=SQLOLEDB.1;Password=peixegamer;Persist Security Info=Tr' +
       'ue;User ID=sa;Initial Catalog=GerenciadorProjeto;Data Source=LOC' +
@@ -37,8 +36,32 @@ object DM: TDM
     CursorType = ctStatic
     Parameters = <>
     SQL.Strings = (
-      'SELECT * FROM Projetos')
+      
+        'SELECT ID, ID_criador, nome, status, data_criacao, data_conclusa' +
+        'o FROM Projetos')
     Left = 440
     Top = 328
+    object QryProjetosID: TAutoIncField
+      FieldName = 'ID'
+      ReadOnly = True
+    end
+    object QryProjetosID_criador: TIntegerField
+      FieldName = 'ID_criador'
+    end
+    object QryProjetosnome: TStringField
+      FieldName = 'nome'
+      Size = 50
+    end
+    object QryProjetosstatus: TStringField
+      FieldName = 'status'
+    end
+    object QryProjetosdata_criacao: TWideStringField
+      FieldName = 'data_criacao'
+      Size = 34
+    end
+    object QryProjetosdata_conclusao: TWideStringField
+      FieldName = 'data_conclusao'
+      Size = 34
+    end
   end
 end

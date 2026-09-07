@@ -8,27 +8,23 @@ object FrameColaboradores: TFrameColaboradores
   ParentColor = False
   TabOrder = 0
   object jpnlConteudoColab: TJvPanel
-    AlignWithMargins = True
-    Left = 3
-    Top = 3
-    Width = 634
-    Height = 474
+    Left = 0
+    Top = 0
+    Width = 640
+    Height = 480
     FlatBorder = True
     Align = alClient
-    BorderWidth = 1
-    BorderStyle = bsSingle
     TabOrder = 0
-    ExplicitLeft = 0
-    ExplicitTop = 0
-    ExplicitWidth = 640
-    ExplicitHeight = 480
+    ExplicitLeft = 3
+    ExplicitTop = 3
+    ExplicitWidth = 634
+    ExplicitHeight = 474
     object JvDBGrid1: TJvDBGrid
       AlignWithMargins = True
-      Left = 7
-      Top = 74
-      Width = 618
-      Height = 391
-      Margins.Left = 5
+      Left = 4
+      Top = 73
+      Width = 632
+      Height = 403
       Align = alClient
       BorderStyle = bsNone
       Color = clWhite
@@ -86,16 +82,21 @@ object FrameColaboradores: TFrameColaboradores
     end
     object jpnlMenuColab: TJvPanel
       AlignWithMargins = True
-      Left = 7
-      Top = 5
-      Width = 618
+      Left = 3
+      Top = 4
+      Width = 633
       Height = 63
-      Margins.Left = 5
+      Margins.Left = 2
       FlatBorder = True
+      FlatBorderColor = 9992033
       Align = alTop
       BorderWidth = 1
+      Color = 13347482
+      ParentBackground = False
       TabOrder = 1
-      ExplicitWidth = 624
+      ExplicitLeft = 4
+      ExplicitTop = 5
+      ExplicitWidth = 625
       object btnAdicionar: TJvBitBtn
         Left = 16
         Top = 20

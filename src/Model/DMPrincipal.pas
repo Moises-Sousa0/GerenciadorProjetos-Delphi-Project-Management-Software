@@ -13,6 +13,12 @@ type
     DsColaboradores: TDataSource;
     DsProjetos: TDataSource;
     QryProjetos: TADOQuery;
+    QryProjetosID: TAutoIncField;
+    QryProjetosID_criador: TIntegerField;
+    QryProjetosnome: TStringField;
+    QryProjetosstatus: TStringField;
+    QryProjetosdata_criacao: TWideStringField;
+    QryProjetosdata_conclusao: TWideStringField;
     procedure DataModuleCreate(Sender: TObject);
   private
     { Private declarations }

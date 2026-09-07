@@ -142,6 +142,7 @@
         <DCCReference Include="src\Model\DAO\uColaboradorDAO.pas"/>
         <DCCReference Include="src\View\uFormColaboradores.pas">
             <Form>FormColaborador</Form>
+            <DesignClass>TFormColaborador</DesignClass>
         </DCCReference>
         <DCCReference Include="src\View\uFrameProjeto.pas">
             <Form>FrameProjeto</Form>
@@ -150,6 +151,11 @@
         <DCCReference Include="src\Controller\uProjetoControl.pas"/>
         <DCCReference Include="src\Model\DAO\uProjetoDAO.pas"/>
         <DCCReference Include="src\Controller\uColaboradorControl.pas"/>
+        <DCCReference Include="src\View\uFormProjeto.pas">
+            <Form>FormProjeto</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TFormProjeto</DesignClass>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

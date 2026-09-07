@@ -1,54 +1,33 @@
 object FrameProjeto: TFrameProjeto
   Left = 0
   Top = 0
-  Width = 624
-  Height = 441
+  Width = 640
+  Height = 480
+  Color = 13347482
+  ParentBackground = False
+  ParentColor = False
   TabOrder = 0
   object jpnlConteudoProjetos: TJvPanel
     Left = 0
     Top = 0
-    Width = 624
-    Height = 441
+    Width = 640
+    Height = 480
     Align = alClient
     TabOrder = 0
-    ExplicitLeft = 264
-    ExplicitTop = 304
-    ExplicitWidth = 185
-    ExplicitHeight = 41
-    object JvDBGrid1: TJvDBGrid
-      Left = 1
-      Top = 70
-      Width = 622
-      Height = 370
-      Align = alClient
-      DataSource = DM.DsProjetos
-      TabOrder = 0
-      TitleFont.Charset = DEFAULT_CHARSET
-      TitleFont.Color = clWindowText
-      TitleFont.Height = -12
-      TitleFont.Name = 'Segoe UI'
-      TitleFont.Style = []
-      SelectColumnsDialogStrings.Caption = 'Select columns'
-      SelectColumnsDialogStrings.OK = '&OK'
-      SelectColumnsDialogStrings.NoSelectionWarning = 'At least one column must be visible!'
-      EditControls = <>
-      RowsHeight = 19
-      TitleRowHeight = 19
-    end
     object jpnlMenuColab: TJvPanel
       AlignWithMargins = True
-      Left = 6
+      Left = 3
       Top = 4
-      Width = 614
+      Width = 633
       Height = 63
-      Margins.Left = 5
+      Margins.Left = 2
       FlatBorder = True
+      FlatBorderColor = 9992033
       Align = alTop
       BorderWidth = 1
-      TabOrder = 1
-      ExplicitLeft = 5
-      ExplicitTop = 3
-      ExplicitWidth = 616
+      Color = 13347482
+      ParentBackground = False
+      TabOrder = 0
       object btnAdicionar: TJvBitBtn
         Left = 16
         Top = 20
@@ -62,6 +41,7 @@ object FrameProjeto: TFrameProjeto
         Font.Style = []
         ParentFont = False
         TabOrder = 0
+        OnClick = btnAdicionarClick
       end
       object btnEditar: TJvBitBtn
         Left = 136
@@ -78,7 +58,65 @@ object FrameProjeto: TFrameProjeto
         Height = 25
         Caption = 'Excluir'
         TabOrder = 2
+        OnClick = btnExcluirClick
       end
+    end
+    object JvDBGrid1: TJvDBGrid
+      Left = 1
+      Top = 70
+      Width = 638
+      Height = 409
+      Align = alClient
+      DataSource = DM.DsProjetos
+      TabOrder = 1
+      TitleFont.Charset = DEFAULT_CHARSET
+      TitleFont.Color = clWindowText
+      TitleFont.Height = -12
+      TitleFont.Name = 'Segoe UI'
+      TitleFont.Style = []
+      SelectColumnsDialogStrings.Caption = 'Select columns'
+      SelectColumnsDialogStrings.OK = '&OK'
+      SelectColumnsDialogStrings.NoSelectionWarning = 'At least one column must be visible!'
+      EditControls = <>
+      RowsHeight = 19
+      TitleRowHeight = 19
+      Columns = <
+        item
+          Expanded = False
+          FieldName = 'ID'
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'ID_criador'
+          Title.Caption = 'Respons'#225'vel'
+          Width = 89
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'nome'
+          Title.Caption = 'Nome'
+          Width = 174
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'status'
+          Title.Caption = 'Status'
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'data_criacao'
+          Title.Caption = 'Data de cria'#231#227'o'
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'data_conclusao'
+          Visible = True
+        end>
     end
   end
 end
