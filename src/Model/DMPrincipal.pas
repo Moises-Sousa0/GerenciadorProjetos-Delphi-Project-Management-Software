@@ -19,6 +19,7 @@ type
     QryProjetosstatus: TStringField;
     QryProjetosdata_criacao: TWideStringField;
     QryProjetosdata_conclusao: TWideStringField;
+    QryProjetosresponsavel: TStringField;
     procedure DataModuleCreate(Sender: TObject);
   private
     { Private declarations }

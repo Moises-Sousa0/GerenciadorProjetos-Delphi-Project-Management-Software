@@ -74,7 +74,7 @@ object FrmTelaPrincipal: TFrmTelaPrincipal
       ParentBackground = False
       TabOrder = 0
     end
-    object JvBitBtn1: TJvBitBtn
+    object btnProjetos: TJvBitBtn
       Left = 13
       Top = 151
       Width = 228
@@ -87,9 +87,9 @@ object FrmTelaPrincipal: TFrmTelaPrincipal
       Font.Style = []
       ParentFont = False
       TabOrder = 1
-      OnClick = JvBitBtn1Click
+      OnClick = btnProjetosClick
     end
-    object JvBitBtn2: TJvBitBtn
+    object btnColaboradores: TJvBitBtn
       Left = 13
       Top = 56
       Width = 228
@@ -103,7 +103,7 @@ object FrmTelaPrincipal: TFrmTelaPrincipal
       Layout = blGlyphBottom
       ParentFont = False
       TabOrder = 2
-      OnClick = JvBitBtn2Click
+      OnClick = btnColaboradoresClick
     end
   end
   object jpnlTopo: TJvPanel

@@ -80,6 +80,7 @@ object FormProjeto: TFormProjeto
       Height = 25
       Caption = 'Cancelar'
       TabOrder = 2
+      OnClick = btnCancelarClick
     end
     object cmbResponsavel: TJvDBLookupCombo
       Left = 32

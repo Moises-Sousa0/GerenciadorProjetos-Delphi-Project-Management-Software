@@ -23,7 +23,7 @@ object FormColaborador: TFormColaborador
     Color = 14666685
     ParentBackground = False
     TabOrder = 0
-    ExplicitWidth = 576
+    ExplicitWidth = 600
     object lblNome: TJvLabel
       Left = 32
       Top = 40

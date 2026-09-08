@@ -15,10 +15,6 @@ object FrameColaboradores: TFrameColaboradores
     FlatBorder = True
     Align = alClient
     TabOrder = 0
-    ExplicitLeft = 3
-    ExplicitTop = 3
-    ExplicitWidth = 634
-    ExplicitHeight = 474
     object JvDBGrid1: TJvDBGrid
       AlignWithMargins = True
       Left = 4
@@ -36,12 +32,14 @@ object FrameColaboradores: TFrameColaboradores
       TitleFont.Height = -12
       TitleFont.Name = 'Segoe UI'
       TitleFont.Style = []
+      AlternateRowColor = 14671839
       SelectColumnsDialogStrings.Caption = 'Select columns'
       SelectColumnsDialogStrings.OK = '&OK'
       SelectColumnsDialogStrings.NoSelectionWarning = 'At least one column must be visible!'
       EditControls = <>
-      RowsHeight = 19
-      TitleRowHeight = 19
+      AutoSizeRows = False
+      RowsHeight = 32
+      TitleRowHeight = 32
       ReadOnlyCellColor = clBtnFace
       Columns = <
         item
@@ -94,9 +92,6 @@ object FrameColaboradores: TFrameColaboradores
       Color = 13347482
       ParentBackground = False
       TabOrder = 1
-      ExplicitLeft = 4
-      ExplicitTop = 5
-      ExplicitWidth = 625
       object btnAdicionar: TJvBitBtn
         Left = 16
         Top = 20

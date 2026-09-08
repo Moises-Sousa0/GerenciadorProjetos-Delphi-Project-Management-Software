@@ -18,12 +18,11 @@ type
     lblInfo: TJvLabel;
     jpnlTopo: TJvPanel;
     JvPanel1: TJvPanel;
-    JvBitBtn1: TJvBitBtn;
-    JvBitBtn2: TJvBitBtn;
+    btnProjetos: TJvBitBtn;
+    btnColaboradores: TJvBitBtn;
 
-    procedure JvBitBtn1Click(Sender: TObject);
-    procedure JvBitBtn2Click(Sender: TObject);
-    procedure JvShape1Click(Sender: TObject);
+    procedure btnProjetosClick(Sender: TObject);
+    procedure btnColaboradoresClick(Sender: TObject);
   private
     { Private declarations }
     FFrameAtual: TFrame;
@@ -58,19 +57,15 @@ begin
   FFrameAtual.Align := alClient;
 end;
 
-procedure TFrmTelaPrincipal.JvBitBtn1Click(Sender: TObject);
+procedure TFrmTelaPrincipal.btnProjetosClick(Sender: TObject);
 begin
   AbrirModulo('Projetos');
 end;
 
-procedure TFrmTelaPrincipal.JvBitBtn2Click(Sender: TObject);
+procedure TFrmTelaPrincipal.btnColaboradoresClick(Sender: TObject);
 begin
   AbrirModulo('Colaboradores');
 end;
 
-procedure TFrmTelaPrincipal.JvShape1Click(Sender: TObject);
-begin
-  AbrirModulo('Colaboradores');
-end;
 
 end.

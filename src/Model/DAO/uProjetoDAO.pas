@@ -3,7 +3,7 @@ unit uProjetoDAO;
 interface
 
 uses
-  Data.DB, ADODB, System.SysUtils;
+  Data.DB, ADODB, System.SysUtils, Vcl.Dialogs;
 
 type
   TProjetoDAO = class
@@ -16,6 +16,8 @@ type
     procedure Atualizar(const ID: Integer; const Nome: String);
     procedure Excluir(const ID: Integer);
     procedure Concluir(const ID: Integer);
+    procedure AtualizarResponsavel(const ID, ID_criador: Integer);
+    procedure Reabrir(const ID: Integer);
   end;
 
   //
@@ -83,6 +85,33 @@ begin
     Parameters.Refresh;
     Parameters.ParamByName('@ID_projeto').Value := ID;
     ExecProc;
+  finally
+    Free;
+  end;
+end;
+
+procedure TProjetoDAO.AtualizarResponsavel(const ID, ID_criador: Integer);
+begin
+  with TADOQuery.Create(nil) do
+  try
+    Connection := FConexao;
+    SQL.Text := 'UPDATE Projetos SET ID_criador = :pID_criador WHERE ID = :pID';
+    Parameters.ParamByName('pID_criador').Value := ID_criador;
+    Parameters.ParamByName('pID').Value := ID;
+    ExecSQL;
+  finally
+    Free;
+  end;
+end;
+
+procedure TProjetoDAO.Reabrir(const ID: Integer);
+begin
+  with TADOQuery.Create(nil) do
+  try
+    Connection := FConexao;
+    SQL.Text := 'UPDATE Projetos SET status = ''EM_PROCESSO'', data_conclusao := NULL WHERE ID = :pID';
+    Parameters.ParamByName('pID').Value := ID;
+    ExecSQL;
   finally
     Free;
   end;

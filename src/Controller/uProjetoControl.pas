@@ -16,6 +16,8 @@ type
     procedure Atualizar(const ID: Integer; const Nome: String);
     procedure Excluir(const ID: Integer);
     procedure Concluir(const ID: Integer);
+    procedure AtualizarResponsavel(const ID, ID_criador: Integer);
+    procedure Reabrir(const ID: Integer);
   end;
 
 implementation
@@ -44,6 +46,17 @@ end;
 procedure TProjetoControl.Concluir(const ID: Integer);
 begin
   FObjProjeto.Concluir(ID);
+end;
+
+procedure TProjetoControl.AtualizarResponsavel(const ID, ID_criador: Integer);
+begin
+   FObjProjeto.AtualizarResponsavel(ID, ID_criador);
+end;
+
+
+procedure TProjetoControl.Reabrir(const ID: Integer);
+begin
+  FObjProjeto.Reabrir(ID);
 end;
 
 end.

@@ -19,6 +19,7 @@ type
     cmbResponsavel: TJvDBLookupCombo;
     procedure btnSalvarClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure btnCancelarClick(Sender: TObject);
 
   private
     { Private declarations }
@@ -41,8 +42,6 @@ begin
 end;
 
 
-
-
 procedure TFormProjeto.FormShow(Sender: TObject);
 begin
   DM.QryColaboradores.Close;
@@ -52,6 +51,11 @@ end;
 function TFormProjeto.ObterIdResponsavel: Integer;
 begin
   Result := cmbResponsavel.KeyValue;
+end;
+
+procedure TFormProjeto.btnCancelarClick(Sender: TObject);
+begin
+  ModalResult := mrCancel;
 end;
 
 procedure TFormProjeto.btnSalvarClick(Sender: TObject);

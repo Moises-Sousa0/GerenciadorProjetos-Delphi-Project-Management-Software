@@ -43,22 +43,23 @@ object FrameProjeto: TFrameProjeto
         TabOrder = 0
         OnClick = btnAdicionarClick
       end
-      object btnEditar: TJvBitBtn
+      object btnExcluir: TJvBitBtn
         Left = 136
         Top = 20
         Width = 75
         Height = 25
-        Caption = 'Editar'
-        TabOrder = 1
-      end
-      object btnExcluir: TJvBitBtn
-        Left = 256
-        Top = 20
-        Width = 75
-        Height = 25
         Caption = 'Excluir'
-        TabOrder = 2
+        TabOrder = 1
         OnClick = btnExcluirClick
+      end
+      object btnGrProjeto: TJvBitBtn
+        Left = 272
+        Top = 20
+        Width = 97
+        Height = 25
+        Caption = 'Gerenciar Projeto'
+        TabOrder = 2
+        OnClick = btnGrProjetoClick
       end
     end
     object JvDBGrid1: TJvDBGrid
@@ -74,12 +75,14 @@ object FrameProjeto: TFrameProjeto
       TitleFont.Height = -12
       TitleFont.Name = 'Segoe UI'
       TitleFont.Style = []
+      AlternateRowColor = 14671839
       SelectColumnsDialogStrings.Caption = 'Select columns'
       SelectColumnsDialogStrings.OK = '&OK'
       SelectColumnsDialogStrings.NoSelectionWarning = 'At least one column must be visible!'
       EditControls = <>
-      RowsHeight = 19
-      TitleRowHeight = 19
+      AutoSizeRows = False
+      RowsHeight = 32
+      TitleRowHeight = 32
       Columns = <
         item
           Expanded = False
@@ -88,16 +91,15 @@ object FrameProjeto: TFrameProjeto
         end
         item
           Expanded = False
-          FieldName = 'ID_criador'
-          Title.Caption = 'Respons'#225'vel'
-          Width = 89
+          FieldName = 'responsavel'
+          Title.Caption = 'Responsavel'
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'nome'
-          Title.Caption = 'Nome'
-          Width = 174
+          Title.Caption = 'Nome do Projeto'
+          Width = 116
           Visible = True
         end
         item
@@ -109,12 +111,14 @@ object FrameProjeto: TFrameProjeto
         item
           Expanded = False
           FieldName = 'data_criacao'
-          Title.Caption = 'Data de cria'#231#227'o'
+          Title.Caption = 'Data cria'#231#227'o'
+          Width = 77
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'data_conclusao'
+          Title.Caption = 'Data conclus'#227'o'
           Visible = True
         end>
     end

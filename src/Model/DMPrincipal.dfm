@@ -19,17 +19,17 @@ object DM: TDM
     SQL.Strings = (
       'SELECT ID, nome, status, senha FROM Colaboradores')
     Left = 440
-    Top = 232
+    Top = 184
   end
   object DsColaboradores: TDataSource
     DataSet = QryColaboradores
-    Left = 160
-    Top = 232
+    Left = 168
+    Top = 184
   end
   object DsProjetos: TDataSource
     DataSet = QryProjetos
     Left = 160
-    Top = 312
+    Top = 272
   end
   object QryProjetos: TADOQuery
     Connection = ADOConnection1
@@ -37,10 +37,12 @@ object DM: TDM
     Parameters = <>
     SQL.Strings = (
       
-        'SELECT ID, ID_criador, nome, status, data_criacao, data_conclusa' +
-        'o FROM Projetos')
+        'SELECT p.ID, p.nome, p.ID_criador, c.nome AS responsavel, p.stat' +
+        'us, p.data_criacao, p.data_conclusao'
+      'FROM Projetos p'
+      'JOIN Colaboradores c ON c.ID = p.ID_criador')
     Left = 440
-    Top = 328
+    Top = 280
     object QryProjetosID: TAutoIncField
       FieldName = 'ID'
       ReadOnly = True
@@ -62,6 +64,10 @@ object DM: TDM
     object QryProjetosdata_conclusao: TWideStringField
       FieldName = 'data_conclusao'
       Size = 34
+    end
+    object QryProjetosresponsavel: TStringField
+      FieldName = 'responsavel'
+      Size = 30
     end
   end
 end

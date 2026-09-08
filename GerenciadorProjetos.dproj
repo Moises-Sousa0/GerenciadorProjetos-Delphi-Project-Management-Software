@@ -156,6 +156,13 @@
             <FormType>dfm</FormType>
             <DesignClass>TFormProjeto</DesignClass>
         </DCCReference>
+        <DCCReference Include="src\Model\DAO\uProjetoColaboradoresDAO.pas"/>
+        <DCCReference Include="src\Controller\uProjetoColaboradoresControl.pas"/>
+        <DCCReference Include="src\View\uFormGerenciadorProjetos.pas">
+            <Form>TGerenciadorProj</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>erenciadorProj</DesignClass>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

@@ -11,7 +11,10 @@ uses
   uProjetoControl in 'src\Controller\uProjetoControl.pas',
   uProjetoDAO in 'src\Model\DAO\uProjetoDAO.pas',
   uColaboradorControl in 'src\Controller\uColaboradorControl.pas',
-  uFormProjeto in 'src\View\uFormProjeto.pas' {FormProjeto: TFormProjeto};
+  uFormProjeto in 'src\View\uFormProjeto.pas' {FormProjeto: TFormProjeto},
+  uProjetoColaboradoresDAO in 'src\Model\DAO\uProjetoColaboradoresDAO.pas',
+  uProjetoColaboradoresControl in 'src\Controller\uProjetoColaboradoresControl.pas',
+  uFormGerenciadorProjetos in 'src\View\uFormGerenciadorProjetos.pas' {TGerenciadorProj: erenciadorProj};
 
 {$R *.res}
 
@@ -20,5 +23,6 @@ begin
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(TDM, DM);
   Application.CreateForm(TFrmTelaPrincipal, FrmTelaPrincipal);
+  Application.CreateForm(TGerenciadorProj, GerenciadorProj);
   Application.Run;
 end.
