@@ -20,6 +20,8 @@ type
     QryProjetosdata_criacao: TWideStringField;
     QryProjetosdata_conclusao: TWideStringField;
     QryProjetosresponsavel: TStringField;
+    QryTarefas: TADOQuery;
+    DsTarefas: TDataSource;
     procedure DataModuleCreate(Sender: TObject);
   private
     { Private declarations }

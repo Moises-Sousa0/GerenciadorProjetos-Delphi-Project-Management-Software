@@ -26,7 +26,7 @@ object GerenciadorProj: TGerenciadorProj
       Top = 0
       Width = 584
       Height = 441
-      ActivePage = tabColab
+      ActivePage = tabDadosProj
       Align = alClient
       TabOrder = 0
       ParentColor = False
@@ -42,10 +42,6 @@ object GerenciadorProj: TGerenciadorProj
           Color = 14666685
           ParentBackground = False
           TabOrder = 0
-          ExplicitLeft = 296
-          ExplicitTop = 232
-          ExplicitWidth = 185
-          ExplicitHeight = 41
           object lblNomeProjeto: TJvLabel
             Left = 16
             Top = 27
@@ -138,10 +134,6 @@ object GerenciadorProj: TGerenciadorProj
           Color = 14666685
           ParentBackground = False
           TabOrder = 0
-          ExplicitLeft = 504
-          ExplicitTop = 24
-          ExplicitWidth = 185
-          ExplicitHeight = 41
           object lblColaboradores: TJvLabel
             Left = 24
             Top = 26
@@ -180,7 +172,7 @@ object GerenciadorProj: TGerenciadorProj
             LookupSource = DM.DsColaboradores
             TabOrder = 2
           end
-          object JvDBGrid1: TJvDBGrid
+          object grid: TJvDBGrid
             Left = 0
             Top = 163
             Width = 576

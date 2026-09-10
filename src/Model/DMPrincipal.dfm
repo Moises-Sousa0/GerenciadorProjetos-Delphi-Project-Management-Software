@@ -3,6 +3,7 @@ object DM: TDM
   Height = 480
   Width = 640
   object ADOConnection1: TADOConnection
+    Connected = True
     ConnectionString = 
       'Provider=SQLOLEDB.1;Password=peixegamer;Persist Security Info=Tr' +
       'ue;User ID=sa;Initial Catalog=GerenciadorProjeto;Data Source=LOC' +
@@ -69,5 +70,23 @@ object DM: TDM
       FieldName = 'responsavel'
       Size = 30
     end
+  end
+  object QryTarefas: TADOQuery
+    Connection = ADOConnection1
+    Parameters = <>
+    SQL.Strings = (
+      
+        'SELECT t.ID, t.nome, t.ID_projeto, p.nome AS Projeto, t.ID_colab' +
+        'orador, c.nome AS Responsavel, t.status, t.data_conclusao'
+      'FROM Tarefas t'
+      'JOIN Colaboradores c ON c.ID = t.ID_colaborador'
+      'JOIN Projetos p ON p.ID = t.ID_projeto;')
+    Left = 440
+    Top = 384
+  end
+  object DsTarefas: TDataSource
+    DataSet = QryTarefas
+    Left = 160
+    Top = 384
   end
 end

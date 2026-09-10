@@ -20,7 +20,7 @@ type
     procedure Reabrir(const ID: Integer);
   end;
 
-  //
+
 implementation
 
 constructor TProjetoDAO.Create(AConexao: TADOConnection);
@@ -52,7 +52,7 @@ procedure TProjetoDAO.Atualizar(const ID: Integer; const Nome: string);
 begin
   with TADOQuery.Create(nil) do
   try
-    Connection := FCOnexao;
+    Connection := FConexao;
     SQL.Text :=  'UPDATE Projetos SET nome = :pNome WHERE ID = :pID';
     Parameters.ParamByName('pNome').Value := nome;
     Parameters.ParamByName('pID').Value := ID;
@@ -67,7 +67,7 @@ procedure TProjetoDAO.Excluir(const ID: Integer);
 begin
   with TADOQuery.Create(nil) do
   try
-    Connection := FCOnexao;
+    Connection := FConexao;
     SQL.Text := 'DELETE FROM Projetos WHERE ID = :pID';
     Parameters.ParamByName('pID').Value := ID;
     ExecSQL;

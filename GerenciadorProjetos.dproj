@@ -163,6 +163,8 @@
             <FormType>dfm</FormType>
             <DesignClass>erenciadorProj</DesignClass>
         </DCCReference>
+        <DCCReference Include="src\Model\DAO\uTarefaDAO.pas"/>
+        <DCCReference Include="src\Controller\uTarefasControl.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

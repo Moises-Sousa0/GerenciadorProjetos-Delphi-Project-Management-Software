@@ -25,7 +25,7 @@ type
     cmbStatus: TJvComboBox;
     lblStatus: TJvLabel;
     dsColaboradoresProjeto: TDataSource;
-    JvDBGrid1: TJvDBGrid;
+    grid: TJvDBGrid;
     cmbColaboradores: TJvDBLookupCombo;
     lblColaboradores: TJvLabel;
     btnAdicionarColab: TJvBitBtn;
