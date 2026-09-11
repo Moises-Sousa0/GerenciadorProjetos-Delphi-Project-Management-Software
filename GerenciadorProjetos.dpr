@@ -16,7 +16,9 @@ uses
   uProjetoColaboradoresControl in 'src\Controller\uProjetoColaboradoresControl.pas',
   uFormGerenciadorProjetos in 'src\View\uFormGerenciadorProjetos.pas' {TGerenciadorProj: erenciadorProj},
   uTarefaDAO in 'src\Model\DAO\uTarefaDAO.pas',
-  uTarefasControl in 'src\Controller\uTarefasControl.pas';
+  uTarefasControl in 'src\Controller\uTarefasControl.pas',
+  uFrameTarefas in 'src\View\uFrameTarefas.pas' {FrameTarefa: TFrame},
+  uFormTarefas in 'src\View\uFormTarefas.pas' {FormTarefas: TFormTarefas};
 
 {$R *.res}
 

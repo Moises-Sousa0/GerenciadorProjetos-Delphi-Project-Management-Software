@@ -1,20 +1,21 @@
-object FormColaborador: TFormColaborador
+object FormTarefas: TFormTarefas
   Left = 0
   Top = 0
-  Caption = 'FormColaborador'
+  Caption = 'FormTarefas'
   ClientHeight = 441
-  ClientWidth = 584
-  Color = 13347482
+  ClientWidth = 624
+  Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  OnCreate = FormCreate
   TextHeight = 15
   object jpnlCadastroEdicao: TJvPanel
     Left = 0
     Top = 0
-    Width = 584
+    Width = 624
     Height = 441
     Margins.Left = 30
     Align = alClient
@@ -23,12 +24,12 @@ object FormColaborador: TFormColaborador
     Color = 14666685
     ParentBackground = False
     TabOrder = 0
-    object lblNome: TJvLabel
+    object lblNomeTarefa: TJvLabel
       Left = 32
       Top = 40
-      Width = 45
+      Width = 111
       Height = 21
-      Caption = 'Nome'
+      Caption = 'Nome da Tarefa'
       Color = clBackground
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
@@ -39,12 +40,12 @@ object FormColaborador: TFormColaborador
       ParentFont = False
       Transparent = True
     end
-    object lblSenha: TJvLabel
+    object lblResponsavel: TJvLabel
       Left = 32
-      Top = 144
-      Width = 45
+      Top = 232
+      Width = 89
       Height = 21
-      Caption = 'Senha'
+      Caption = 'Respons'#225'vel'
       Color = clBackground
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
@@ -55,12 +56,12 @@ object FormColaborador: TFormColaborador
       ParentFont = False
       Transparent = True
     end
-    object lblStatus: TJvLabel
+    object lblProjeto: TJvLabel
       Left = 32
-      Top = 248
-      Width = 44
+      Top = 136
+      Width = 118
       Height = 21
-      Caption = 'Status'
+      Caption = 'Projeto da Tarefa'
       Color = clBackground
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
@@ -71,7 +72,7 @@ object FormColaborador: TFormColaborador
       ParentFont = False
       Transparent = True
     end
-    object edtNome: TJvEdit
+    object edtNomeTarefa: TJvEdit
       Left = 32
       Top = 63
       Width = 233
@@ -79,33 +80,13 @@ object FormColaborador: TFormColaborador
       TabOrder = 0
       Text = ''
     end
-    object edtSenha: TJvEdit
-      Left = 32
-      Top = 167
-      Width = 233
-      Height = 23
-      TabOrder = 1
-      Text = ''
-    end
-    object cmbStatus: TJvComboBox
-      Left = 32
-      Top = 275
-      Width = 233
-      Height = 23
-      Style = csDropDownList
-      TabOrder = 2
-      Text = ''
-      Items.Strings = (
-        'ATIVO'
-        'INATIVO')
-    end
     object btnSalvar: TJvBitBtn
       Left = 32
       Top = 384
       Width = 75
       Height = 25
       Caption = 'Salvar'
-      TabOrder = 3
+      TabOrder = 1
       OnClick = btnSalvarClick
     end
     object btnCancelar: TJvBitBtn
@@ -114,8 +95,33 @@ object FormColaborador: TFormColaborador
       Width = 75
       Height = 25
       Caption = 'Cancelar'
-      TabOrder = 4
+      TabOrder = 2
       OnClick = btnCancelarClick
     end
+    object cmbResponsavel: TJvDBLookupCombo
+      Left = 32
+      Top = 259
+      Width = 233
+      Height = 22
+      LookupField = 'ID'
+      LookupDisplay = 'nome'
+      LookupSource = DsColabProjeto
+      TabOrder = 3
+    end
+    object cmbProjetoTarefa: TJvDBLookupCombo
+      Left = 32
+      Top = 163
+      Width = 233
+      Height = 22
+      LookupField = 'ID'
+      LookupDisplay = 'nome'
+      LookupSource = DM.DsProjetos
+      TabOrder = 4
+      OnChange = cmbProjetoTarefaChange
+    end
+  end
+  object DsColabProjeto: TDataSource
+    Left = 584
+    Top = 408
   end
 end

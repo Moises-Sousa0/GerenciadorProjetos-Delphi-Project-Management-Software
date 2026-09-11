@@ -105,6 +105,21 @@ object FrmTelaPrincipal: TFrmTelaPrincipal
       TabOrder = 2
       OnClick = btnColaboradoresClick
     end
+    object btnTarefas: TJvBitBtn
+      Left = 13
+      Top = 247
+      Width = 228
+      Height = 66
+      Caption = 'Tarefas'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -19
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 3
+      OnClick = btnTarefasClick
+    end
   end
   object jpnlTopo: TJvPanel
     Left = 0

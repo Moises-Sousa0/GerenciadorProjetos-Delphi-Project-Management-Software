@@ -16,6 +16,7 @@ type
     procedure Inserir(const ID_projeto, ID_colaborador: Integer);
     procedure Excluir(const ID_projeto, ID_colaborador: Integer);
     function Listar(const ID_projeto: Integer): TADOQuery;
+    function ListarComStatus(const ID_projeto: Integer): TADOQuery;
   end;
 
 implementation
@@ -61,6 +62,17 @@ begin
   Result := TADOQuery.Create(nil);
   Result.Connection := FConexao;
   Result.SQL.Text := 'SELECT c.ID, c.nome FROM Colaboradores c JOIN Projeto_Colaboradores pc ON pc.ID_colaborador = c.ID WHERE pc.ID_projeto = :pID_projeto';
+  Result.Parameters.ParamByName('pID_projeto').Value := ID_projeto;
+  Result.Open;
+end;
+
+
+//funcao de listrar pro uFormTarefas
+function TProjetoColaboradores.ListarComStatus(const ID_projeto: Integer): TADOQuery;
+begin
+  Result := TADOQuery.Create(nil);
+  Result.Connection := FConexao;
+  Result.SQL.Text := 'SELECT c.ID, c.nome, c.status FROM Colaboradores c JOIN Projeto_Colaboradores pc ON pc.ID_colaborador = c.ID WHERE pc.ID_projeto = :pID_projeto';
   Result.Parameters.ParamByName('pID_projeto').Value := ID_projeto;
   Result.Open;
 end;

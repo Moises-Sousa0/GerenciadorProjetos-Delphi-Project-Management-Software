@@ -3,7 +3,6 @@ object DM: TDM
   Height = 480
   Width = 640
   object ADOConnection1: TADOConnection
-    Connected = True
     ConnectionString = 
       'Provider=SQLOLEDB.1;Password=peixegamer;Persist Security Info=Tr' +
       'ue;User ID=sa;Initial Catalog=GerenciadorProjeto;Data Source=LOC' +
@@ -73,6 +72,7 @@ object DM: TDM
   end
   object QryTarefas: TADOQuery
     Connection = ADOConnection1
+    CursorType = ctStatic
     Parameters = <>
     SQL.Strings = (
       

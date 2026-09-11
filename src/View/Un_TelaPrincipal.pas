@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, JvExExtCtrls,
   JvExtComponent, JvPanel, Data.DB, Vcl.Grids, Vcl.DBGrids, uFrameColaboradores,
-  JvExControls, JvLabel, uFrameProjeto, Vcl.StdCtrls, Vcl.Buttons, JvExButtons,
+  JvExControls, JvLabel, uFrameProjeto, Vcl.StdCtrls, Vcl.Buttons, uFrameTarefas,JvExButtons,
   JvBitBtn, JvShape;
 
 type
@@ -20,9 +20,11 @@ type
     JvPanel1: TJvPanel;
     btnProjetos: TJvBitBtn;
     btnColaboradores: TJvBitBtn;
+    btnTarefas: TJvBitBtn;
 
     procedure btnProjetosClick(Sender: TObject);
     procedure btnColaboradoresClick(Sender: TObject);
+    procedure btnTarefasClick(Sender: TObject);
   private
     { Private declarations }
     FFrameAtual: TFrame;
@@ -38,8 +40,7 @@ implementation
 
 {$R *.dfm}
 
-uses DMPrincipal, uProjetoControl, uProjetoDAO, uColaboradorControl,
-  uColaboradorDAO, uFormColaboradores;
+
 
 
 
@@ -51,7 +52,9 @@ begin
   if NomeModulo = 'Colaboradores' then
     FFrameAtual := TFrameColaboradores.Create(Self)
   else if NomeModulo = 'Projetos' then
-    FFrameAtual := TFrameProjeto.Create(Self);
+    FFrameAtual := TFrameProjeto.Create(Self)
+  else if NomeModulo = 'Tarefas' then
+    FFrameAtual := TFrameTarefa.Create(self);
 
   FFrameAtual.Parent := jpnl_Conteudo;
   FFrameAtual.Align := alClient;
@@ -67,5 +70,9 @@ begin
   AbrirModulo('Colaboradores');
 end;
 
+procedure TFrmTelaPrincipal.btnTarefasClick(Sender: TObject);
+begin
+  AbrirModulo('Tarefas');
+end;
 
 end.

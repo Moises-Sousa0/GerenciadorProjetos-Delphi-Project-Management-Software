@@ -27,6 +27,7 @@ type
     { Public declarations }
     function ObterNome: String;
     function ObterIdResponsavel: Integer;
+
   end;
 
 var
