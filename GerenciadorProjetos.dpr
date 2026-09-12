@@ -17,8 +17,10 @@ uses
   uFormGerenciadorProjetos in 'src\View\uFormGerenciadorProjetos.pas' {TGerenciadorProj: erenciadorProj},
   uTarefaDAO in 'src\Model\DAO\uTarefaDAO.pas',
   uTarefasControl in 'src\Controller\uTarefasControl.pas',
-  uFrameTarefas in 'src\View\uFrameTarefas.pas' {FrameTarefa: TFrame},
-  uFormTarefas in 'src\View\uFormTarefas.pas' {FormTarefas: TFormTarefas};
+  uFrameTarefas in 'src\View\uFrameTarefas.pas' {FrameTarefa: T},
+  uFormTarefas in 'src\View\uFormTarefas.pas' {FormTarefas: TFormTarefas},
+  uFormGerenciarTarefas in 'src\View\uFormGerenciarTarefas.pas' {TGerenciarTaref: GerenciarTaref},
+  uFrameDashboard in 'src\View\uFrameDashboard.pas' {FrameDashboard: T};
 
 {$R *.res}
 
@@ -28,5 +30,6 @@ begin
   Application.CreateForm(TDM, DM);
   Application.CreateForm(TFrmTelaPrincipal, FrmTelaPrincipal);
   Application.CreateForm(TGerenciadorProj, GerenciadorProj);
+  Application.CreateForm(TGerenciarTaref, GerenciarTaref);
   Application.Run;
 end.

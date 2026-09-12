@@ -56,6 +56,7 @@ object FrameTarefa: TFrameTarefa
         Height = 25
         Caption = 'Gerenciar Tarefa'
         TabOrder = 2
+        OnClick = btnGerenciarTarefaClick
       end
     end
     object JvDBGrid1: TJvDBGrid

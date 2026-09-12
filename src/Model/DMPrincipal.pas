@@ -22,6 +22,16 @@ type
     QryProjetosresponsavel: TStringField;
     QryTarefas: TADOQuery;
     DsTarefas: TDataSource;
+    DsDashBoard: TDataSource;
+    QryDashboard: TADOQuery;
+    QryDashboardID: TIntegerField;
+    QryDashboardnome: TStringField;
+    QryDashboardstatus: TStringField;
+    QryDashboarddata_criacao: TWideStringField;
+    QryDashboarddata_conclusao: TWideStringField;
+    QryDashboardtotal_tarefas: TIntegerField;
+    QryDashboardtarefas_concluidas: TIntegerField;
+    QryDashboardtarefas_pendentes: TIntegerField;
     procedure DataModuleCreate(Sender: TObject);
   private
     { Private declarations }

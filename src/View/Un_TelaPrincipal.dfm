@@ -30,7 +30,7 @@ object FrmTelaPrincipal: TFrmTelaPrincipal
       Width = 940
       Height = 623
       Align = alClient
-      Color = clSilver
+      Color = clWindow
       ParentBackground = False
       TabOrder = 0
     end
@@ -76,9 +76,9 @@ object FrmTelaPrincipal: TFrmTelaPrincipal
     end
     object btnProjetos: TJvBitBtn
       Left = 13
-      Top = 151
+      Top = 255
       Width = 228
-      Height = 66
+      Height = 90
       Caption = 'Projetos'
       Font.Charset = ANSI_CHARSET
       Font.Color = clWindowText
@@ -91,9 +91,9 @@ object FrmTelaPrincipal: TFrmTelaPrincipal
     end
     object btnColaboradores: TJvBitBtn
       Left = 13
-      Top = 56
+      Top = 152
       Width = 228
-      Height = 65
+      Height = 89
       Caption = 'Colaboradores'
       Font.Charset = ANSI_CHARSET
       Font.Color = clWindowText
@@ -107,9 +107,9 @@ object FrmTelaPrincipal: TFrmTelaPrincipal
     end
     object btnTarefas: TJvBitBtn
       Left = 13
-      Top = 247
+      Top = 359
       Width = 228
-      Height = 66
+      Height = 90
       Caption = 'Tarefas'
       Font.Charset = ANSI_CHARSET
       Font.Color = clWindowText
@@ -119,6 +119,21 @@ object FrmTelaPrincipal: TFrmTelaPrincipal
       ParentFont = False
       TabOrder = 3
       OnClick = btnTarefasClick
+    end
+    object btnDashboard: TJvBitBtn
+      Left = 13
+      Top = 48
+      Width = 228
+      Height = 89
+      Caption = 'Dashboard'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -19
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 4
+      OnClick = btnDashboardClick
     end
   end
   object jpnlTopo: TJvPanel

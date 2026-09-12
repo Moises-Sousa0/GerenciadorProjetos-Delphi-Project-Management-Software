@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, JvExExtCtrls,
-  JvExtComponent, JvPanel, Data.DB, Vcl.Grids, Vcl.DBGrids, uFrameColaboradores,
+  JvExtComponent, JvPanel, Data.DB, Vcl.Grids, Vcl.DBGrids, uFrameColaboradores, uFrameDashboard,
   JvExControls, JvLabel, uFrameProjeto, Vcl.StdCtrls, Vcl.Buttons, uFrameTarefas,JvExButtons,
   JvBitBtn, JvShape;
 
@@ -21,10 +21,12 @@ type
     btnProjetos: TJvBitBtn;
     btnColaboradores: TJvBitBtn;
     btnTarefas: TJvBitBtn;
+    btnDashboard: TJvBitBtn;
 
     procedure btnProjetosClick(Sender: TObject);
     procedure btnColaboradoresClick(Sender: TObject);
     procedure btnTarefasClick(Sender: TObject);
+    procedure btnDashboardClick(Sender: TObject);
   private
     { Private declarations }
     FFrameAtual: TFrame;
@@ -54,7 +56,14 @@ begin
   else if NomeModulo = 'Projetos' then
     FFrameAtual := TFrameProjeto.Create(Self)
   else if NomeModulo = 'Tarefas' then
-    FFrameAtual := TFrameTarefa.Create(self);
+    FFrameAtual := TFrameTarefa.Create(self)
+  else if NomeModulo = 'Dashboard' then
+    FFrameAtual := TFrameDashboard.Create(self)
+  else
+  begin
+    FFrameAtual := TFrameDashboard.Create(self);
+  end;
+
 
   FFrameAtual.Parent := jpnl_Conteudo;
   FFrameAtual.Align := alClient;
@@ -75,4 +84,8 @@ begin
   AbrirModulo('Tarefas');
 end;
 
+procedure TFrmTelaPrincipal.btnDashboardClick(Sender: TObject);
+begin
+  AbrirModulo('Dashboard');
+end;
 end.

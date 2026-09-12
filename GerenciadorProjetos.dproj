@@ -175,6 +175,16 @@
             <FormType>dfm</FormType>
             <DesignClass>TFormTarefas</DesignClass>
         </DCCReference>
+        <DCCReference Include="src\View\uFormGerenciarTarefas.pas">
+            <Form>TGerenciarTaref</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>GerenciarTaref</DesignClass>
+        </DCCReference>
+        <DCCReference Include="src\View\uFrameDashboard.pas">
+            <Form>FrameDashboard</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>T</DesignClass>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

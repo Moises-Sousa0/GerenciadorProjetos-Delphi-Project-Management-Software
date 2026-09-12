@@ -18,6 +18,7 @@ type
     procedure Excluir(const ID: Integer);
     procedure EditarColaborador(const ID_colaborador, ID: Integer; const Status: String);
     procedure ConcluirTarefa(const ID: Integer);
+    procedure Reabrir(const ID: Integer);
   end;
 
 implementation
@@ -28,6 +29,10 @@ begin
   FObjTarefasDAO := ATaref;
 end;
 
+procedure TTarefasControl.Reabrir(const ID: Integer);
+begin
+  FObjTarefasDAO.Reabrir(ID);
+end;
 
 procedure TTarefasControl.Inserir(const ID_projeto, ID_colaborador: Integer; const Status, Nome: string);
 begin

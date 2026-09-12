@@ -17,6 +17,7 @@ type
     procedure Excluir(const ID: Integer);
     procedure EditarColaborador(const ID_colaborador, ID: Integer);
     procedure ConcluirTarefa(const ID: Integer);
+    procedure Reabrir(const ID: Integer);
   end;
 
 implementation
@@ -92,8 +93,22 @@ begin
   try
     Connection := FConexao;
     ProcedureName := 'ConcluirTarefa';
-    parameters.ParamByName('@ID').Value := ID;
+    Parameters.Refresh;
+    Parameters.ParamByName('@ID_tarefa').Value := ID;
     ExecProc;
+  finally
+    Free;
+  end;
+end;
+
+procedure TTarefaDAO.Reabrir(const ID: Integer);
+begin
+  with TADOQuery.Create(nil) do
+  try
+    Connection := FConexao;
+    SQL.Text := 'UPDATE Tarefas SET status = ''PENDENTE'', data_conclusao = NULL WHERE ID = :pID';
+    parameters.ParamByName('pID').Value := ID;
+    ExecSQL;
   finally
     Free;
   end;

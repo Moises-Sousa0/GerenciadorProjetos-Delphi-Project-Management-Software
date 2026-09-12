@@ -10,7 +10,7 @@ object DM: TDM
     LoginPrompt = False
     Provider = 'SQLOLEDB.1'
     Left = 304
-    Top = 120
+    Top = 64
   end
   object QryColaboradores: TADOQuery
     Connection = ADOConnection1
@@ -19,17 +19,17 @@ object DM: TDM
     SQL.Strings = (
       'SELECT ID, nome, status, senha FROM Colaboradores')
     Left = 440
-    Top = 184
+    Top = 120
   end
   object DsColaboradores: TDataSource
     DataSet = QryColaboradores
     Left = 168
-    Top = 184
+    Top = 120
   end
   object DsProjetos: TDataSource
     DataSet = QryProjetos
     Left = 160
-    Top = 272
+    Top = 208
   end
   object QryProjetos: TADOQuery
     Connection = ADOConnection1
@@ -42,7 +42,7 @@ object DM: TDM
       'FROM Projetos p'
       'JOIN Colaboradores c ON c.ID = p.ID_criador')
     Left = 440
-    Top = 280
+    Top = 216
     object QryProjetosID: TAutoIncField
       FieldName = 'ID'
       ReadOnly = True
@@ -82,11 +82,55 @@ object DM: TDM
       'JOIN Colaboradores c ON c.ID = t.ID_colaborador'
       'JOIN Projetos p ON p.ID = t.ID_projeto;')
     Left = 440
-    Top = 384
+    Top = 320
   end
   object DsTarefas: TDataSource
     DataSet = QryTarefas
     Left = 160
-    Top = 384
+    Top = 320
+  end
+  object DsDashBoard: TDataSource
+    DataSet = QryDashboard
+    Left = 160
+    Top = 408
+  end
+  object QryDashboard: TADOQuery
+    Connection = ADOConnection1
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      'SELECT * FROM vw_ResumoProjetos')
+    Left = 440
+    Top = 408
+    object QryDashboardID: TIntegerField
+      FieldName = 'ID'
+    end
+    object QryDashboardnome: TStringField
+      FieldName = 'nome'
+      Size = 50
+    end
+    object QryDashboardstatus: TStringField
+      FieldName = 'status'
+    end
+    object QryDashboarddata_criacao: TWideStringField
+      FieldName = 'data_criacao'
+      Size = 34
+    end
+    object QryDashboarddata_conclusao: TWideStringField
+      FieldName = 'data_conclusao'
+      Size = 34
+    end
+    object QryDashboardtotal_tarefas: TIntegerField
+      FieldName = 'total_tarefas'
+      ReadOnly = True
+    end
+    object QryDashboardtarefas_concluidas: TIntegerField
+      FieldName = 'tarefas_concluidas'
+      ReadOnly = True
+    end
+    object QryDashboardtarefas_pendentes: TIntegerField
+      FieldName = 'tarefas_pendentes'
+      ReadOnly = True
+    end
   end
 end
