@@ -109,9 +109,6 @@ begin
 end;
 
 
-
-
-
 procedure TFrameProjeto.AplicarFiltroProjeto;
 var
   SQL, WhereClause: String;
@@ -157,5 +154,6 @@ begin
   cmbFiltroStatus.ItemIndex := 0;
   AplicarFiltroProjeto;
 end;
+
 
 end.
