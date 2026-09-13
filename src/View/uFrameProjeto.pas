@@ -6,7 +6,8 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, uProjetoDAO, Data.DB, Vcl.ExtCtrls,
   JvExExtCtrls, JvExtComponent, JvPanel, Vcl.Grids, Vcl.DBGrids, JvExDBGrids,
-  JvDBGrid, Vcl.StdCtrls, Vcl.Buttons, uFormGerenciadorProjetos, JvExButtons, JvBitBtn, uProjetoControl, DMPrincipal, uFormProjeto;
+  JvDBGrid, Vcl.StdCtrls, Vcl.Buttons, uFormGerenciadorProjetos, JvExButtons, JvBitBtn, uProjetoControl, DMPrincipal, uFormProjeto,
+  JvExStdCtrls, JvEdit, JvExControls, JvDBLookup, JvCombobox;
 
 type
   TFrameProjeto = class(TFrame)
@@ -16,9 +17,16 @@ type
     btnExcluir: TJvBitBtn;
     JvDBGrid1: TJvDBGrid;
     btnGrProjeto: TJvBitBtn;
+    JvPanel1: TJvPanel;
+    btnLimparFiltroProjeto: TJvBitBtn;
+    edtBuscaProjeto: TJvEdit;
+    cmbFiltroStatus: TJvComboBox;
     procedure btnExcluirClick(Sender: TObject);
     procedure btnAdicionarClick(Sender: TObject);
     procedure btnGrProjetoClick(Sender: TObject);
+    procedure edtBuscaProjetoChange(Sender: TObject);
+    procedure cmbFiltroStatusChange(Sender: TObject);
+    procedure btnLimparFiltroProjetoClick(Sender: TObject);
   private
     { Private declarations }
     FDAO: TProjetoDAO;
@@ -28,6 +36,7 @@ type
   public
     { Public declarations }
     constructor Create(AOwner: TComponent); override;
+    procedure AplicarFiltroProjeto;
   end;
 
 
@@ -99,12 +108,54 @@ begin
   end;
 end;
 
+
+
+
+
+procedure TFrameProjeto.AplicarFiltroProjeto;
+var
+  SQL, WhereClause: String;
+begin
+  WhereClause := '';
+
+  if edtBuscaProjeto.Text <> '' then
+    WhereClause := WhereClause + ' AND p.nome LIKE ''%' + edtBuscaProjeto.Text + '%''';
+
+  if cmbFiltroStatus.Text <> 'Todos' then
+    WhereClause := WhereClause + ' AND p.status = ''' + cmbFiltroStatus.Text + '''';
+
+  SQL := 'SELECT p.ID, p.nome, p.ID_criador, c.nome AS responsavel, p.status, p.data_criacao, p.data_conclusao FROM Projetos p JOIN Colaboradores c ON c.ID = p.ID_criador';
+  if WhereClause <> '' then
+    SQL := SQL + ' WHERE ' + Copy(WhereClause, 6, Length(WhereClause));
+
+  DM.QryProjetos.Close;
+  DM.QryProjetos.SQL.Text := SQL;
+  DM.QryProjetos.Open;
+end;
+
 constructor TFrameProjeto.Create(AOwner: TComponent);
 begin
   inherited Create(AOwner);
   DM.QryProjetos.Open;
   FDAO := TProjetoDAO.Create(DM.ADOConnection1);
   FController := TProjetoControl.Create(FDAO);
+end;
+
+procedure TFrameProjeto.edtBuscaProjetoChange(Sender: TObject);
+begin
+  AplicarFiltroProjeto;
+end;
+
+procedure TFrameProjeto.cmbFiltroStatusChange(Sender: TObject);
+begin
+  AplicarFiltroProjeto;
+end;
+
+procedure TFrameProjeto.btnLimparFiltroProjetoClick(Sender: TObject);
+begin
+  edtBuscaProjeto.Text := '';
+  cmbFiltroStatus.ItemIndex := 0;
+  AplicarFiltroProjeto;
 end;
 
 end.

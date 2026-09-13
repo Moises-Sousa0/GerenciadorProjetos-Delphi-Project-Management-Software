@@ -53,7 +53,7 @@ object FrameProjeto: TFrameProjeto
         OnClick = btnExcluirClick
       end
       object btnGrProjeto: TJvBitBtn
-        Left = 272
+        Left = 265
         Top = 20
         Width = 97
         Height = 25
@@ -64,9 +64,9 @@ object FrameProjeto: TFrameProjeto
     end
     object JvDBGrid1: TJvDBGrid
       Left = 1
-      Top = 70
+      Top = 113
       Width = 638
-      Height = 409
+      Height = 366
       Align = alClient
       DataSource = DM.DsProjetos
       TabOrder = 1
@@ -121,6 +121,55 @@ object FrameProjeto: TFrameProjeto
           Title.Caption = 'Data conclus'#227'o'
           Visible = True
         end>
+    end
+    object JvPanel1: TJvPanel
+      AlignWithMargins = True
+      Left = 3
+      Top = 70
+      Width = 633
+      Height = 40
+      Margins.Left = 2
+      Margins.Top = 0
+      FlatBorder = True
+      FlatBorderColor = 9992033
+      Align = alTop
+      BorderWidth = 1
+      Color = 13347995
+      ParentBackground = False
+      TabOrder = 2
+      ExplicitLeft = 2
+      ExplicitWidth = 635
+      object btnLimparFiltroProjeto: TJvBitBtn
+        Left = 276
+        Top = 8
+        Width = 75
+        Height = 25
+        Caption = 'Limpar'
+        TabOrder = 0
+        OnClick = btnLimparFiltroProjetoClick
+      end
+      object edtBuscaProjeto: TJvEdit
+        Left = 14
+        Top = 9
+        Width = 121
+        Height = 23
+        TabOrder = 1
+        Text = ''
+        OnChange = edtBuscaProjetoChange
+      end
+      object cmbFiltroStatus: TJvComboBox
+        Left = 176
+        Top = 9
+        Width = 73
+        Height = 23
+        TabOrder = 2
+        Text = ''
+        OnChange = cmbFiltroStatusChange
+        Items.Strings = (
+          'Todos'
+          'EM_PROCESSO'
+          'CONCLUIDO')
+      end
     end
   end
 end

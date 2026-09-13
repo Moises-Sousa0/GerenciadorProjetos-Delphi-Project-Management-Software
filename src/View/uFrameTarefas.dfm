@@ -61,9 +61,9 @@ object FrameTarefa: TFrameTarefa
     end
     object JvDBGrid1: TJvDBGrid
       Left = 1
-      Top = 70
+      Top = 113
       Width = 638
-      Height = 409
+      Height = 366
       Align = alClient
       DataSource = DM.DsTarefas
       TabOrder = 1
@@ -78,6 +78,62 @@ object FrameTarefa: TFrameTarefa
       EditControls = <>
       RowsHeight = 19
       TitleRowHeight = 19
+    end
+    object JvPanel1: TJvPanel
+      AlignWithMargins = True
+      Left = 3
+      Top = 70
+      Width = 633
+      Height = 40
+      Margins.Left = 2
+      Margins.Top = 0
+      FlatBorder = True
+      FlatBorderColor = 9992033
+      Align = alTop
+      BorderWidth = 1
+      Color = 13347995
+      ParentBackground = False
+      TabOrder = 2
+      object cmbFiltroColaborador: TJvDBLookupCombo
+        Left = 281
+        Top = 9
+        Width = 81
+        Height = 22
+        LookupField = 'ID'
+        LookupDisplay = 'nome'
+        LookupSource = DM.DsColaboradores
+        TabOrder = 0
+        OnCloseUp = cmbFiltroColaboradorCloseUp
+      end
+      object cmbFiltroProjeto: TJvDBLookupCombo
+        Left = 176
+        Top = 9
+        Width = 80
+        Height = 22
+        LookupField = 'ID'
+        LookupDisplay = 'nome'
+        LookupSource = DM.DsProjetos
+        TabOrder = 1
+        OnCloseUp = cmbFiltroProjetoCloseUp
+      end
+      object btnLimparFiltro: TJvBitBtn
+        Left = 388
+        Top = 7
+        Width = 75
+        Height = 25
+        Caption = 'Limpar'
+        TabOrder = 2
+        OnClick = btnLimparFiltroClick
+      end
+      object edtBuscaTarefa: TJvEdit
+        Left = 14
+        Top = 9
+        Width = 121
+        Height = 23
+        TabOrder = 3
+        Text = ''
+        OnChange = edtBuscaTarefaChange
+      end
     end
   end
 end
