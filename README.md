@@ -52,3 +52,9 @@ View:
 - Concluir projeto/tarefa usa procedure no banco (valida pendências); reabrir é `UPDATE` direto, sem procedure.
 - Responsável de um projeto também precisa constar em `Projeto_colaboradores`; trocar o responsável sincroniza essa tabela.
 
+---
+
+<img width="1908" height="1032" alt="image" src="https://github.com/user-attachments/assets/c41f7866-d981-4a03-974e-76c7e6c97e38" />
+<img width="1912" height="1029" alt="image" src="https://github.com/user-attachments/assets/e4ebe6aa-93fe-4091-90be-3b02c4c60e62" />
+
+
