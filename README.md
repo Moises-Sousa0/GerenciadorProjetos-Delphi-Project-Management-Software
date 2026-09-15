@@ -4,7 +4,7 @@ Sistema desktop de gestão de projetos e tarefas, desenvolvido em **Delphi 12 Co
 
 ## Stack
 
-- **Delphi 12 CE** + **JVCL/JCL** 
+- **Delphi 12 CE** + **JVCL/JCL JEDI** 
 - **SQL Server** via `ADOConnection` (ADO)
 - Arquitetura em camadas: **View → Controller → DAO → DM**
 
