@@ -1,6 +1,4 @@
 Win32/*
-!Win32/Debug/SeuProjeto.exe
-!Win32/Release/SeuProjeto.exe
 
 *.dll
 *.dcu
